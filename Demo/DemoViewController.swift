@@ -46,6 +46,12 @@ class DemoViewController: UIViewController {
         PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
     
+    @IBAction func showAnimatedSuccessSubtitleHUD(sender: AnyObject) {
+        PKHUD.sharedHUD.contentView = PKHUDSuccessSubtitleView(subtitle: "Success")
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 2.0)
+    }
+    
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.AllButUpsideDown;
     }
