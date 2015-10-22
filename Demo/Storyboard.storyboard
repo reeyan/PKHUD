@@ -22,7 +22,7 @@
                                 <animations/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rqP-5y-Qfl">
-                                <rect key="frame" x="40" y="328" width="520" height="252"/>
+                                <rect key="frame" x="40" y="276" width="520" height="304"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZ4-Lx-cqz">
                                         <rect key="frame" x="0.0" y="0.0" width="520" height="44"/>
@@ -102,6 +102,22 @@
                                         </state>
                                         <connections>
                                             <action selector="showAnimatedSuccessSubtitleHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="cA1-SN-uCI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQm-hm-1gi">
+                                        <rect key="frame" x="0.0" y="260" width="520" height="44"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="TZV-Re-AzC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Animated Error subtitle HUD">
+                                            <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showAnimatedErrorSubtitleHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="YeR-sp-YxM"/>
                                         </connections>
                                     </button>
                                 </subviews>

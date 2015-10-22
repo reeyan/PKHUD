@@ -52,6 +52,12 @@ class DemoViewController: UIViewController {
         PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
     
+    @IBAction func showAnimatedErrorSubtitleHUD(sender: AnyObject) {
+        PKHUD.sharedHUD.contentView = PKHUDErrorSubtitleView(subtitle: "Error")
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 2.0)
+    }
+    
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.AllButUpsideDown;
     }
