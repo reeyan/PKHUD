@@ -56,7 +56,9 @@ public class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         animation.duration = 1.0
         animation.damping = 1.5
         animation.mass = 0.22
-        animation.initialVelocity = 0.5
+        if (animation.respondsToSelector(Selector.init(stringLiteral: "initialVelocity"))) {
+            animation.initialVelocity = 0.5
+        }
         animation.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
         return animation
     }
