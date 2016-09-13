@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class PKHUDErrorSubtitleView : PKHUDErrorView {
+open class PKHUDErrorSubtitleView : PKHUDErrorView {
     public init(subtitle: String?) {
         super.init()
         subtitleLabel.text = subtitle;
@@ -19,7 +19,7 @@ public class PKHUDErrorSubtitleView : PKHUDErrorView {
         super.init(coder: aDecoder)
     }
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         
         let viewWidth = bounds.size.width
@@ -33,11 +33,11 @@ public class PKHUDErrorSubtitleView : PKHUDErrorView {
         subtitleLabel.frame = CGRect(origin: CGPoint(x:0.0, y:threeQuarterHeight - opticalOffset), size: CGSize(width: viewWidth, height: quarterHeight))
     }
     
-    public let subtitleLabel: UILabel = {
+    open let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .Center
-        label.font = UIFont.boldSystemFontOfSize(17.0)
-        label.textColor = UIColor.blackColor().colorWithAlphaComponent(0.85)
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 17.0)
+        label.textColor = UIColor.black.withAlphaComponent(0.85)
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
         return label

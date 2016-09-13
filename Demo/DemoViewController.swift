@@ -17,52 +17,52 @@ class DemoViewController: UIViewController {
         PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
     }
 
-    @IBAction func showAnimatedSuccessHUD(sender: AnyObject) {
+    @IBAction func showAnimatedSuccessHUD(_ sender: AnyObject) {
         PKHUD.sharedHUD.contentView = PKHUDSuccessView()
         PKHUD.sharedHUD.show()
         PKHUD.sharedHUD.hide(afterDelay: 2.0);
     }
     
-    @IBAction func showAnimatedErrorHUD(sender: AnyObject) {
+    @IBAction func showAnimatedErrorHUD(_ sender: AnyObject) {
         PKHUD.sharedHUD.contentView = PKHUDErrorView()
         PKHUD.sharedHUD.show()
         PKHUD.sharedHUD.hide(afterDelay: 2.0);
     }
     
-    @IBAction func showAnimatedProgressHUD(sender: AnyObject) {
+    @IBAction func showAnimatedProgressHUD(_ sender: AnyObject) {
         PKHUD.sharedHUD.contentView = PKHUDProgressView()
         PKHUD.sharedHUD.show()
         
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
+        let delayTime = DispatchTime.now() + Double(Int64(2.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTime) {
             PKHUD.sharedHUD.contentView = PKHUDSuccessView()
             PKHUD.sharedHUD.hide(afterDelay: 2.0)
         }
     }
     
-    @IBAction func showTextHUD(sender: AnyObject) {
+    @IBAction func showTextHUD(_ sender: AnyObject) {
         PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Requesting Licence…")
         PKHUD.sharedHUD.show()
         PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
     
-    @IBAction func showAnimatedSuccessSubtitleHUD(sender: AnyObject) {
+    @IBAction func showAnimatedSuccessSubtitleHUD(_ sender: AnyObject) {
         PKHUD.sharedHUD.contentView = PKHUDSuccessSubtitleView(subtitle: "Success")
         PKHUD.sharedHUD.show()
         PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
     
-    @IBAction func showAnimatedErrorSubtitleHUD(sender: AnyObject) {
+    @IBAction func showAnimatedErrorSubtitleHUD(_ sender: AnyObject) {
         PKHUD.sharedHUD.contentView = PKHUDErrorSubtitleView(subtitle: "Error")
         PKHUD.sharedHUD.show()
         PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.AllButUpsideDown;
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.allButUpsideDown;
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
 }
